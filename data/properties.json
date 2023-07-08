@@ -1,0 +1,40 @@
+{
+  "NEW_CHAT_BTN_TEXT": "New chat",
+  "APP_NAME": "ChatGPT",
+  "MAIN": [
+    {
+      "title": "Examples",
+      "items": [
+        "Explain quantum computing in simple terms",
+        "Got any creative ideas for a 10 year old’s birthday?",
+        "How do I make an HTTP request in Javascript?"
+      ],
+      "clickable": true
+    },
+    {
+      "title": "Capabilities",
+      "items": [
+        "Remembers what user said earlier in the conversation",
+        "Allows user to provide follow-up corrections",
+        "Trained to decline inappropriate requests"
+      ],
+      "clickable": false
+    },
+    {
+      "title": "Limitations",
+      "items": [
+        "May occasionally generate incorrect information",
+        "May occasionally produce harmful instructions or biased content",
+        "Limited knowledge of world and events after 2021"
+      ],
+      "clickable": false
+    }
+  ],
+  "FORM": {
+    "input_placeholder": "Send a message"
+  },
+  "FOOTER": {
+        "text": "Built by Mohamed Mourouh",
+        "link": ""
+  }
+}
