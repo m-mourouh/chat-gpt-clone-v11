@@ -41,12 +41,15 @@ export default function Intro({ chatID }: Props) {
         <span className="dark:text-white"> Loading...</span>
       </div>
     );
-  } else{
+  } else {
     return (
       <div className="mx-auto bg-white dark:bg-transparent min-h-screen flex flex-col items-center justify-center p-4 container relative md:max-w-2xl lg:max-w-[38rem] xl:max-w-3xl">
-        <h1 className="text-4xl font-semibold text-center mb-3 mt-14 md:mb-16 dark:text-white">
-          {data.APP_NAME}
-        </h1>
+        <div>
+          <h1 className="text-4xl font-semibold text-center mb-3 mt-14 md:mb-16 dark:text-white">
+            {data.APP_NAME}
+            <sub className="text-sm font-normal">images</sub>{" "}
+          </h1>
+        </div>
         <div className="flex flex-col mb-36 md:flex-row gap-2 text-center text-slate-700">
           {data.MAIN.map((list, idx) => (
             <div className="mt-5 md:mt-0" key={idx}>

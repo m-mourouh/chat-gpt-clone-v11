@@ -14,8 +14,8 @@ import { usePathname, useRouter } from "next/navigation";
 import { sendMessage } from "@/lib/api/api";
 import { setIsLoading, setMessages } from "@/redux/features/chat/chat";
 
-  import { ToastContainer, toast } from "react-toastify";
-  import "react-toastify/dist/ReactToastify.css";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 type Props = {
   id: string | null;
@@ -47,7 +47,6 @@ export default function Message({ id }: Props) {
       progress: undefined,
       theme: "dark",
     });
-
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -117,7 +116,7 @@ export default function Message({ id }: Props) {
       } catch (error) {
         console.log(error);
         notify("⁉️ Somthing went wrong!", 2000);
-        notify("😉 we will fix this later",4000);
+        notify("😉 we will fix this later", 4000);
       }
     }
   };
@@ -126,7 +125,7 @@ export default function Message({ id }: Props) {
   return (
     <>
       <ToastContainer />
-      <div className="flex justify-center bg-white dark:bg-chat-gray-user w-full md:md-screen h-28 fixed bottom-0 border-t border-t-slate-500 md:border-none">
+      <div className="flex justify-center bg-white dark:bg-chat-gray-user w-full md:md-screen h-28 fixed bottom-0 dark:border-t dark:border-t-slate-500 md:border-none">
         <div className="fixed bottom-0 pt-4 md:pb-0 md:bottom-0  px-3 md:mx-5 z-[9999999]   md:rounded-md ">
           <form
             className="flex justify-between items-center "
@@ -157,6 +156,13 @@ export default function Message({ id }: Props) {
               target="_blank"
             >
               {data.developer.name}
+            </Link>
+            <Link
+              href={data.developer.v1}
+              className="underline"
+              target="_blank"
+            >
+              | version 1.0
             </Link>
           </small>
         </div>
