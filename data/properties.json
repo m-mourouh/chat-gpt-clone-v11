@@ -14,7 +14,7 @@
     {
       "title": "Capabilities",
       "items": [
-        "Remembers what user said earlier in the conversation",
+        "Provides images and code snippet with answers",
         "Allows user to provide follow-up corrections",
         "Trained to decline inappropriate requests"
       ],
@@ -23,9 +23,9 @@
     {
       "title": "Limitations",
       "items": [
-        "May occasionally generate incorrect information",
-        "May occasionally produce harmful instructions or biased content",
-        "Limited knowledge of world and events after 2021"
+        "May occasionally not work properly due to limited availability",
+        "Cannot remembers what user said earlier in the conversation",
+        "Supports only english, korean, japanese"
       ],
       "clickable": false
     }

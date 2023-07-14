@@ -7,4 +7,3 @@ export default function NavBar() {
     <SideBar />
   </nav>;
 }
-// md:min-w-[260px]

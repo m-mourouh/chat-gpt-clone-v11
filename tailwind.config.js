@@ -1,13 +1,13 @@
 /** @type {import('tailwindcss').Config} */
 
 module.exports = {
+  darkMode: "class",
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    darkMode: "class",
     extend: {
       colors: {
         chat: {
@@ -15,6 +15,8 @@ module.exports = {
             800: "#444654",
             900: "#202123",
             nav: "#343541",
+            user: "#343541",
+            ai: "#444654",
           },
         },
       },
