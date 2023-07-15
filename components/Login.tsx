@@ -11,7 +11,7 @@ export default function Login() {
 
   return (
     <div className="bg-white dark:bg-gray-900 h-screen w-full flex flex-col  items-center justify-center ">
-      <button className=" flex items-center  justify-center px-5 py-3 bg-green-500 shadow-sm rounded-md gap-2 text-white w-[200px]" onClick={handleClick}>
+      <button className=" flex items-center  justify-center px-5 py-3 bg-indigo-500 shadow-sm rounded-md gap-2 text-white w-[200px] hover:bg-indigo-600 transition-all" onClick={handleClick}>
         <Image
           src={AiAvatar}
           width={25}

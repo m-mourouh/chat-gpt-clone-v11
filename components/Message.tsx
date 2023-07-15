@@ -142,7 +142,7 @@ export default function Message({ id }: Props) {
             />
             <button
               disabled={isDisabled}
-              className="text-xl absolute right-5 mb-4 md:mb-0 bg-green-500 text-white p-2 disabled:bg-transparent disabled:shadow-none disabled:text-slate-300 rounded-md text-center shadow-sm"
+              className="text-xl absolute right-5 mb-4 md:mb-0 bg-indigo-500 text-white p-2 disabled:bg-transparent disabled:shadow-none disabled:text-slate-300 rounded-md text-center shadow-sm"
             >
               <IoMdSend />
             </button>

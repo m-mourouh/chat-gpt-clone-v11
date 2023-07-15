@@ -38,7 +38,7 @@
     width: calc((100% - 260px) * 0.5);
   }
   .selected-theme {
-    color: #22c55e;
+    color: rgb(139, 0, 238);
   }
   /* @media(max-width: 768px) {
       .side-bard  {
@@ -54,7 +54,7 @@
 
   .photo-grid-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
     /*  try to remov the desnse value to see the diff */
     grid-auto-flow: row dense;
   }

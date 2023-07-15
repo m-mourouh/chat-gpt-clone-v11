@@ -47,7 +47,7 @@ export default function AiMessage({ text, links, code }: Props) {
   return (
     <div className="w-full bg-gray-100 dark:bg-chat-gray-ai border-b dark:border-b-gray-700 flex justify-center">
       <div className="flex items-center gap-4  md:gap-5   px-3 py-5 w-full  md:max-w-2xl lg:max-w-[38rem] xl:max-w-3xl  ">
-        <div className="min-w-[30px] min-h-[30px] bg-green-500 flex justify-center items-center rounded-sm self-start">
+        <div className="min-w-[30px] min-h-[30px] bg-indigo-500 flex justify-center items-center rounded-sm self-start">
           <Image
             src={AiAvatar}
             alt="userName"
@@ -77,7 +77,7 @@ export default function AiMessage({ text, links, code }: Props) {
                 >
                   {isCopied ? (
                     <>
-                      <BsCheck2 className="text-md text-green-400" />
+                      <BsCheck2 className="text-md text-indigo-400" />
                       <small>copied!</small>
                     </>
                   ) : (
@@ -108,7 +108,7 @@ export default function AiMessage({ text, links, code }: Props) {
               {/* images */}
               {images.length > 0 && (
                 <div className="photo-grid-container gap-1 mt-5">
-                  {images.splice(0, 6).map((src, idx) => (
+                  {images.splice(0, 12).map((src, idx) => (
                     <img
                       src={src}
                       alt="image"

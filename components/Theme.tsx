@@ -21,7 +21,7 @@ export default function Theme() {
       {/* system theme | default */}
 
       <button
-        className={`text-md hover:text-green-400 rounded-full p-2 ${
+        className={`text-md hover:text-indigo-400 rounded-full p-2 ${
           selectedTheme === "system" ? "selected-theme" : ""
         } `}
         onClick={() => setTheme("system")}
@@ -31,7 +31,7 @@ export default function Theme() {
       </button>
       {/* dark theme  */}
       <button
-        className={`text-md hover:text-green-400 rounded-full p-2 ${
+        className={`text-md hover:text-indigo-400 rounded-full p-2 ${
           selectedTheme === "dark" ? "selected-theme" : ""
         } `}
         onClick={() => setTheme("dark")}
@@ -41,7 +41,7 @@ export default function Theme() {
       </button>
       {/* light theme  */}
       <button
-        className={`text-md hover:text-green-400 rounded-full p-2 ${
+        className={`text-md hover:text-indigo-400 rounded-full p-2 ${
           selectedTheme === "light" ? "selected-theme" : ""
         }`}
         onClick={() => setTheme("light")}

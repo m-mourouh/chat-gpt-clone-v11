@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import Link from "next/link";
 import { LuMessageSquare } from "react-icons/lu";
 import { GoTrash } from "react-icons/go";
@@ -8,9 +8,6 @@ import { usePathname, useRouter } from "next/navigation";
 import { collection, deleteDoc, orderBy, query, doc } from "firebase/firestore";
 import { useSession } from "next-auth/react";
 import { useEffect, useState } from "react";
-import Image from "next/image";
-import AiAvatar from "@/public/images/chat.svg"
-import { setLastQuestion } from "@/redux/features/chat/chat";
 import { useAppDispatch } from "@/redux/hooks";
 export default function ChatItem({ id }: ChatItemProps) {
   //______________________hooks________________
@@ -18,7 +15,7 @@ export default function ChatItem({ id }: ChatItemProps) {
   const pathname = usePathname();
   const router = useRouter();
   const { data: session } = useSession();
-  const dispatch = useAppDispatch()
+  const dispatch = useAppDispatch();
   const [messages, loading, error] = useCollection(
     query(
       collection(db, "users", session?.user?.email!, "chats", id, "messages"),
@@ -28,11 +25,10 @@ export default function ChatItem({ id }: ChatItemProps) {
   useEffect(() => {
     if (!pathname) return;
     setIsActive(pathname.includes(id));
-    
+
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [pathname]);
 
-  
   //______________________functions________________
 
   const deleteChat = async () => {
@@ -42,7 +38,7 @@ export default function ChatItem({ id }: ChatItemProps) {
 
   return (
     <li
-      className={`flex items-center  justify-between  text-white hover:bg-[#2A2B32] py-3 px-3 ${
+      className={`flex items-center  justify-between  text-white hover:bg-[#2A2B32] py-3 px-3  ${
         isActive && "bg-[#2A2B32]"
       }`}
     >
@@ -52,13 +48,15 @@ export default function ChatItem({ id }: ChatItemProps) {
           href={`/chat/${id}`}
           className="rounded-md cursor-pointer text-sm capitalize truncate w-[20ch]"
           title={
-            messages?.docs[messages.docs.length - 1]?.data().question || "New chat"
+            messages?.docs[messages.docs.length - 1]?.data().question ||
+            "New chat"
           }
         >
           {loading ? (
-              <span className="animate-pulse">Loading...</span>
+            <span className="animate-pulse">Loading...</span>
           ) : (
-            messages?.docs[messages.docs.length - 1]?.data().question || "New chat"
+            messages?.docs[messages.docs.length - 1]?.data().question ||
+            "New chat"
           )}
         </Link>
       </span>

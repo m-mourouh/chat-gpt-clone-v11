@@ -1,18 +1,17 @@
 /* eslint-disable @next/next/no-img-element */
-import Image from "next/image"
-import DefaultUserPicture from "@/public/images/default.png"
-import { useSession } from "next-auth/react"
+import DefaultUserPicture from "@/public/images/default.png";
+import { useSession } from "next-auth/react";
 
 type Props = {
-  text: string
-}
-export default function UserMessage({text}: Props) {
-  const {data: session} = useSession()
+  text: string;
+};
+export default function UserMessage({ text }: Props) {
+  const { data: session } = useSession();
 
   return (
-    <div className="w-full bg-white dark:bg-chat-gray-user border-b dark:border-b-gray-700 flex justify-center first-of-type:mt-12 md:first-of-type:mt-0">
+    <div className="w-full bg-white dark:bg-chat-gray-user border-b dark:border-b-gray-700 flex justify-center first-of-type:mt-12 md:first-of-type:mt-0 animate-fade animate-once animate-duration-[1500ms] animate-normal">
       <div className="flex items-center gap-3  md:gap-5   px-3 py-5 w-full  md:max-w-2xl lg:max-w-[38rem] xl:max-w-3xl ">
-        <div className=" min-w-[30px] min-h-[30px]  flex justify-center items-center rounded-sm self-start">
+        <div className=" min-w-[30px] min-h-[30px]  flex justify-center items-center rounded-sm self-start ">
           <img
             src={session?.user?.image || DefaultUserPicture.src}
             alt="userName"

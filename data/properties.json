@@ -5,8 +5,8 @@
     {
       "title": "Examples",
       "items": [
-        "Explain quantum computing in simple terms",
-        "Got any creative ideas for a 10 year old’s birthday?",
+        "Can you explain object-oriented programming in Python ?",
+        "Give me 10 most important business books",
         "How do I make an HTTP request in Javascript?"
       ],
       "clickable": true
@@ -14,18 +14,18 @@
     {
       "title": "Capabilities",
       "items": [
-        "Provides images and code snippet with answers",
-        "Allows user to provide follow-up corrections",
-        "Trained to decline inappropriate requests"
+        "Provides text code snippet with answers 🧑‍💻",
+        "Can Provide images with answers 🖼️",
+         "Trained to decline inappropriate requests so be attention 😉"
       ],
       "clickable": false
     },
     {
       "title": "Limitations",
       "items": [
-        "May occasionally not work properly due to limited availability",
+        "May occasionally not work properly due to limited availability ⚠️",
         "Cannot remembers what user said earlier in the conversation",
-        "Supports only english, korean, japanese"
+        "Supports only english, korean, japanese 🇺🇸 🇰🇷 🇯🇵"
       ],
       "clickable": false
     }

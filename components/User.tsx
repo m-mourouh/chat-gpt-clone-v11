@@ -19,7 +19,7 @@ export default function User() {
         <p className="text-white text-sm uppercase ">
           {session?.user?.name?.split("") || "username"}
         </p>
-        <button className="text-white bg-chat-gray-user px-4 py-2 rounded-md text-sm" title="logout" onClick={() => signOut()}>
+        <button className="text-white bg-chat-gray-user px-4 py-2 rounded-md text-sm hover:bg-indigo-500 transition-all" title="logout" onClick={() => signOut()}>
           Logout
         </button>
       </span>
