@@ -129,9 +129,9 @@ export default function Message({ id }: Props) {
 
         // create new Chat (Home Page)
         if (pathname === "/" && !id) {
-          const userDocRef = doc(db, "users", session?.user?.email!);
-
+          
           try {
+            const userDocRef = doc(db, "users", session?.user?.email!);
             const userDocSnapshot = await getDoc(userDocRef);
             if (userDocSnapshot.exists()) {
               await updateDoc(doc(db, "users", session?.user?.email!), {
@@ -172,7 +172,21 @@ export default function Message({ id }: Props) {
         // Add new Message to current chat
         else {
           router.push(`/chat/${id}`);
-
+           try {
+             const userDocRef = doc(db, "users", session?.user?.email!);
+             const userDocSnapshot = await getDoc(userDocRef);
+             if (userDocSnapshot.exists()) {
+               await updateDoc(doc(db, "users", session?.user?.email!), {
+                 value: increment(1),
+               });
+             } else {
+               await setDoc(doc(db, "users", session?.user?.email!), {
+                 value: 1,
+               });
+             }
+           } catch (err) {
+             console.error("Error retrieving user document:", err);
+           }
           await addDoc(
             collection(
               db,
@@ -184,10 +198,7 @@ export default function Message({ id }: Props) {
             ),
             message
           );
-          // updating
-          await updateDoc(doc(db, "users", session?.user?.email!), {
-            value: increment(1),
-          });
+     
 
           // redirect to the current chat page
           dispatch(setIsLoading(false));
