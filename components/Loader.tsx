@@ -30,7 +30,7 @@ export default function Loader() {
           className="animate-spin"
           alt="laoding"
         />{" "}
-        <span className="dark:text-white"> Loading...</span>
+        <span className="dark:text-white"> Loading <span className="relative animate-ping">...</span></span>
       </div>
     );
   }

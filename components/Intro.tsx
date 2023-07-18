@@ -7,7 +7,7 @@ import { useAppDispatch, useAppSelector } from "@/redux/hooks";
 import LoaderImg from "@/public/images/loader.svg";
 import Image from "next/image";
 import { setMessageValue } from "@/redux/features/message/message";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { setIsLoading } from "@/redux/features/chat/chat";
 
 type Props = {
@@ -18,12 +18,19 @@ export default function Intro({ chatID }: Props) {
   //_________________hooks________________
   const dispatch = useAppDispatch();
   const isLoading = useAppSelector((state) => state.chat.isLoading);
-  const hasMessages = useAppSelector((state) => state.chat.hasMessages);
+  const limited = useAppSelector((state) => state.message.limited);
+   const [isLimited, setIsLimited] = useState(false);
 
+     useEffect(() => {
+       const isLocalLimited = localStorage.getItem("limited");
+       if (isLocalLimited === "true") {
+         setIsLimited(true);
+       }
+     }, []);
   //________________functions__________________
 
   const sendSlectedMessage = (message: string) => {
-    if (message.trim().length > 0) {
+    if (message.trim().length > 0 && !limited && !isLimited) {
       dispatch(setMessageValue(message.trim()));
     }
   };
@@ -38,16 +45,19 @@ export default function Intro({ chatID }: Props) {
           className="animate-spin"
           alt="laoding"
         />{" "}
-        <span className="dark:text-white"> Loading...</span>
+        <span className="dark:text-white">
+          {" "}
+          Loading <span className="relative animate-ping">...</span>
+        </span>
       </div>
     );
   } else {
     return (
-      <div className="mx-auto bg-white dark:bg-transparent min-h-screen flex flex-col items-center justify-center p-4 container relative md:max-w-2xl lg:max-w-[38rem] xl:max-w-3xl">
+      <div className={`mx-auto bg-white dark:bg-transparent min-h-screen flex flex-col items-center justify-center p-4 container relative md:max-w-2xl lg:max-w-[38rem] xl:max-w-3xl `}>
         <div>
           <h1 className="text-4xl font-semibold text-center mb-3 mt-14 md:mb-16 dark:text-white">
             {data.APP_NAME}
-            <sub className="text-sm font-normal">images</sub>{" "}
+            <sub className="text-sm font-normal animate-pulse">images</sub>{" "}
           </h1>
         </div>
         <div className="flex flex-col mb-36 md:flex-row gap-2 text-center text-slate-700">

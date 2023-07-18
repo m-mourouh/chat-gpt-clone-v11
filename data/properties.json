@@ -16,7 +16,7 @@
       "items": [
         "Provides text code snippet with answers 🧑‍💻",
         "Can Provide images with answers 🖼️",
-         "Trained to decline inappropriate requests so be attention 😉"
+         "Trained to decline inappropriate requests so pay attention 😉"
       ],
       "clickable": false
     },
@@ -24,8 +24,8 @@
       "title": "Limitations",
       "items": [
         "May occasionally not work properly due to limited availability ⚠️",
-        "Cannot remembers what user said earlier in the conversation",
-        "Multi-languages Support 🇲🇦 🇺🇸 🇨🇳 🇰🇷 🇯🇵"
+        "For testing purposes, you can only ask 5 questions 🖐️",
+        "Multi-languages Support 🇲🇦 🇺🇸 🇫🇷 🇰🇷"
       ],
       "clickable": false
     }

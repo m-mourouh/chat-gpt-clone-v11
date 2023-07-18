@@ -14,7 +14,7 @@ export default function Theme() {
       setSelectedTheme(theme)
   },[theme])
   // __________________Functions ________________
-    console.log(theme)
+
   // __________________JSX________________________
   return (
     <div className="flex gap-5 items-center justify-center mt-4  text-white  border-t  border-gray-700 pt-4">
